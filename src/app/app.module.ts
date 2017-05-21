@@ -12,9 +12,22 @@ import { NavVideoComponent } from './main/components/nav-video/nav-video.compone
 import { NavContainersComponent } from './main/components/nav-containers/nav-containers.component';
 import { NavPhotosComponent } from './main/components/nav-photos/nav-photos.component';
 import { NavVideosComponent } from './main/components/nav-videos/nav-videos.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { AuthComponent } from './auth/auth.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
+  { path: 'auth', component: AuthComponent,
+  children: [
+   { path: 'login', component: LoginComponent },
+   { path: 'register', component: RegisterComponent },
+   { path: 'reset', component: ResetPasswordComponent },
+   { path: 'logout', component: LogoutComponent },
+   ]
+  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -28,7 +41,12 @@ const appRoutes: Routes = [
     NavVideoComponent,
     NavContainersComponent,
     NavPhotosComponent,
-    NavVideosComponent
+    NavVideosComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetPasswordComponent,
+    LogoutComponent,
+    AuthComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
