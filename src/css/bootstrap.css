@@ -647,8 +647,8 @@ div.centered {
     background-size: cover;
 }
 .auth-container.royal {
-    background: url(https://frontendmasters.com/wp-content/themes/frontendmasters/assets/images/workshop/live-online.jpg) no-repeat center center;
-    background-size: cover;
+      background-size: cover;
+       background-color: rgba(12, 78, 178, 0.79);
 }
 .auth-container.kitchen {
     background: url("../images/background/3.jpg") no-repeat center center;
@@ -681,15 +681,16 @@ div.centered {
 		height: 500px;
     margin-bottom: 20px;
 }
-.auth-container .content {
-    flex: 1.2;
-    max-width: 400px;
-    box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.1) inset, 0px 0 0 rgba(0, 0, 0, 0.05) inset, 0px 20px 20px rgba(0, 0, 0, 0.05) inset, 0px 30px 20px rgba(0, 0, 0, 0.05) inset;
-    padding: 20px 30px;
-    background: white;
-    background: -moz-linear-gradient(top, white 0%, #f1f1f1 16%, #e1e1e1 17%, #f6f6f6 100%);
-    background: -webkit-linear-gradient(top, white 0%, #f1f1f1 16%, #e1e1e1 17%, #f6f6f6 100%);
-    background: linear-gradient(to bottom, #5c5074 0%, #62567a 16%, #564e73 17%, #564e73 100%);
+  .auth-container .content {
+  flex: 1.2;
+  max-width: 400px;
+  box-shadow: 0px 0px 0 rgba(0, 0, 0, 0.1) inset, 0px 0 0 rgba(0, 0, 0, 0.05) inset, 0px 20px 20px rgba(0, 0, 0, 0.05) inset, 0px 30px 20px rgba(0, 0, 0, 0.05) inset;
+  padding: 20px 30px;
+  background: white;
+  background: -moz-linear-gradient(top, white 0%, #f1f1f1 16%, #e1e1e1 17%, #f6f6f6 100%);
+  background: -webkit-linear-gradient(top, white 0%, #f1f1f1 16%, #e1e1e1 17%, #f6f6f6 100%);
+  background: linear-gradient(to bottom, #3f73c2 0%, #0c4eb2 16%, #3f73c2 17%, rgba(4, 72, 176, 0.08) 100%);
+
 }
 .auth-container .content input {
     margin-top: 6px;
