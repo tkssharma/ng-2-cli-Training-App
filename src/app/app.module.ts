@@ -17,6 +17,9 @@ import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { LogoutComponent } from './auth/logout/logout.component';
 import { AuthComponent } from './auth/auth.component';
+import { TrainingsComponent } from './gennext/trainings/trainings.component';
+import { WorkshopComponent } from './gennext/workshop/workshop.component';
+import { GennextComponent } from './gennext/gennext.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -26,6 +29,12 @@ const appRoutes: Routes = [
    { path: 'register', component: RegisterComponent },
    { path: 'reset', component: ResetPasswordComponent },
    { path: 'logout', component: LogoutComponent },
+   ]
+  },
+  { path: 'gennext', component: GennextComponent,
+  children: [
+   { path: 'training', component: TrainingsComponent },
+   { path: 'workshop', component: WorkshopComponent },
    ]
   },
   { path: '**', component: PageNotFoundComponent }
@@ -46,7 +55,10 @@ const appRoutes: Routes = [
     RegisterComponent,
     ResetPasswordComponent,
     LogoutComponent,
-    AuthComponent
+    AuthComponent,
+    TrainingsComponent,
+    WorkshopComponent,
+    GennextComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
