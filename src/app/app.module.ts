@@ -19,24 +19,10 @@ import { LogoutComponent } from './auth/logout/logout.component';
 import { AuthComponent } from './auth/auth.component';
 import { TrainingsComponent } from './gennext/trainings/trainings.component';
 import { WorkshopComponent } from './gennext/workshop/workshop.component';
-import { GennextComponent } from './gennext/gennext.component';
+import {AuthModule}  from './auth/app.auth';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'auth', component: AuthComponent,
-  children: [
-   { path: 'login', component: LoginComponent },
-   { path: 'register', component: RegisterComponent },
-   { path: 'reset', component: ResetPasswordComponent },
-   { path: 'logout', component: LogoutComponent },
-   ]
-  },
-  { path: 'gennext', component: GennextComponent,
-  children: [
-   { path: 'training', component: TrainingsComponent },
-   { path: 'workshop', component: WorkshopComponent },
-   ]
-  },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -50,21 +36,14 @@ const appRoutes: Routes = [
     NavVideoComponent,
     NavContainersComponent,
     NavPhotosComponent,
-    NavVideosComponent,
-    LoginComponent,
-    RegisterComponent,
-    ResetPasswordComponent,
-    LogoutComponent,
-    AuthComponent,
-    TrainingsComponent,
-    WorkshopComponent,
-    GennextComponent
+    NavVideosComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
