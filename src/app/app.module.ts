@@ -20,6 +20,7 @@ import { AuthComponent } from './auth/auth.component';
 import { TrainingsComponent } from './gennext/trainings/trainings.component';
 import { WorkshopComponent } from './gennext/workshop/workshop.component';
 import {AuthModule}  from './auth/app.auth';
+import {GennextModule} from './gennext/gennext.module';
 
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AuthModule
+    AuthModule,
+    GennextModule
   ],
   providers: [],
   bootstrap: [AppComponent]
