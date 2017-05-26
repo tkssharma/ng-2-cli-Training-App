@@ -1,5 +1,8 @@
+import { HttpClientService } from './shared/http-client.service';
+import { localStorageService } from './shared/localStorage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,7 +24,6 @@ import { TrainingsComponent } from './gennext/trainings/trainings.component';
 import { WorkshopComponent } from './gennext/workshop/workshop.component';
 import {AuthModule}  from './auth/app.auth';
 import {GennextModule} from './gennext/gennext.module';
-
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -43,11 +45,13 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpModule,
     HttpModule,
     AuthModule,
     GennextModule
   ],
-  providers: [],
+  providers: [localStorageService,HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

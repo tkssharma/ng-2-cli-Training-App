@@ -4,11 +4,11 @@
          <div class="content-container">
             <div class="flex flex--jc-sa flex--align-center">
                <div class="content">
-                  <form>
+                  <form  name="myForm" [formGroup]="myForm" novalidate (ngSubmit)="onSubmit(myForm.value)" >
                      <h2>Login to Members Area.</h2>
-                     <div class="input"><input type="text" placeholder="email address" value=""></div>
-                     <div class="input"><input type="password" placeholder="password" value=""></div>
-                     <div class="form-footer"><button type="submit" class="button default centered ">Login Now</button><a class="label-marker" href="/auth/reset">Reset password</a></div>
+                     <div class="input"><input type="text" formControlName="userName" placeholder="email address" value=""></div>
+                     <div class="input"><input type="password" formControlName="password" placeholder="password" value=""></div>
+                     <div class="form-footer"><button [disabled]="!myForm.valid || isLoggedIn " type="submit" class="button default centered ">Login Now</button><a class="label-marker" href="/auth/reset">Reset password</a></div>
                   </form>
                </div>
                <div class="social">
