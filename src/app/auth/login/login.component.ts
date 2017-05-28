@@ -1,7 +1,7 @@
   import {localStorageService} from './../../shared/localStorage.service';
   import {Component, OnInit, OnDestroy} from '@angular/core';
   import {Router} from '@angular/router';
-  import {UserService} from './user.service';
+  import {UserService} from '../user.service';
   import {FormGroup, FormControl, FormBuilder, Validators} from '@angular/forms';
 
   @Component({selector: 'app-login', templateUrl: './login.component.html', styleUrls: ['./login.component.css']})

@@ -1,7 +1,7 @@
   import { Request, Response } from '@angular/http';
   import { Injectable } from '@angular/core';
-  import {HttpClientService} from '../../shared/http-client.service';
-  import { localStorageService } from '../../shared/localStorage.service';
+  import {HttpClientService} from '../shared/http-client.service';
+  import { localStorageService } from '../shared/localStorage.service';
   import {Router} from '@angular/router';
   @Injectable()
   export class UserService {
@@ -21,6 +21,26 @@
         'password': user.password
       };
       return this.httpService.post(loginUrl,loginData).map((response: Response) => {
+          let res=response.json();
+          if (res) {
+            this.loggedIn = true;
+            this.localStoarge.set('token', res.token);
+            this.localStoarge.set('name', res.user.name);
+            this.localStoarge.set('uid', res.user.uid);
+            this.localStoarge.set('mail', res.user.mail);
+          }
+      });
+    }
+    userRegister(user){
+      const regUrl = `${this.END_POINT}user/register`;
+      const regData = {
+        'username': user.userName,
+        'password': user.password,
+        'phone': user.phone,
+        'email': user.email,
+        'varifyPassword': user.varifyPassword
+      };
+      return this.httpService.post(regUrl,regData).map((response: Response) => {
           let res=response.json();
           if (res) {
             this.loggedIn = true;

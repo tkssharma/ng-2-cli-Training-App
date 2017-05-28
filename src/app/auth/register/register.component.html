@@ -5,14 +5,16 @@
          <div class="content-container">
             <div class="flex flex--jc-sa flex--align-center">
                <div class="content">
-                  <form>
+                  <form  name="myRegForm" [formGroup]="myRegForm" novalidate (ngSubmit)="onSubmit(myRegForm.value)">
                      <h2>Register new account.</h2>
-                     <div class="input"><input type="text" placeholder="full name" value=""></div>
-                     <div class="input"><input type="text" placeholder="email address" value=""></div>
-                     <div class="input"><input type="text" placeholder="phone number" value=""></div>
-                     <div class="input"><input type="password" placeholder="password" value=""></div>
-                     <div class="input"><input type="password" placeholder="verify password" value=""></div>
-                     <div class="form-footer"><button type="submit" class="ant-btn ant-btn-primary">Register</button><a class="label-marker" href="/auth/login">← Back to Login Page</a></div>
+                     <div class="input"><input type="text" formControlName="userName" placeholder="full name" value=""></div>
+                     <div class="input"><input type="text" formControlName="email" placeholder="email address" value=""></div>
+                     <div class="input"><input type="text" formControlName="phone" placeholder="phone number" value=""></div>
+                     <div class="input"><input type="password" formControlName="password" placeholder="password" value=""></div>
+                     <div class="input"><input type="password" formControlName="varifyPassword"  placeholder="verify password" value=""></div>
+                     <div class="form-footer">
+                      <button [disabled]="!myRegForm.valid || isLoggedIn " type="submit" class="button default centered ">Register Now</button>
+                      <a class="label-marker" href="/auth/login">← Back to Login Page</a></div>
                   </form>
                </div>
                <div class="social">
