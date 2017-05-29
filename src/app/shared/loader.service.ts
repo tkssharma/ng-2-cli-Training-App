@@ -1,5 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
+import {appConfig} from './app.constants';
 
 @Component({
   selector: 'loader',
