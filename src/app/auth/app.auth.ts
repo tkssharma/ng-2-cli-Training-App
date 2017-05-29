@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthComponent } from './auth.component';
-import {UserService} from './login/user.service'
+import {UserService} from './user.service'
 const appRoutes: Routes = [
   { path: 'auth', component: AuthComponent,
   children: [
