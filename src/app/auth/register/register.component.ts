@@ -14,12 +14,12 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
     public myRegForm : FormGroup;
     public submitted : boolean;
     public errorMessage : string;
-    loggedIn = false;
     isLoggedIn : boolean;
     authentication_error = false;
 
     constructor(private _fb : FormBuilder, private router : Router, private userService : UserService, private localStorage : localStorageService) {
-      this.isLoggedIn = localStorage.get(name);
+     this.isLoggedIn = !! (localStorage.get('token'));
+
     }
     ngOnInit() {
       this.myRegForm = this
@@ -53,8 +53,8 @@ import { Component, OnInit,OnDestroy } from '@angular/core';
           ]
         });
 
-      this.loggedIn = this.userService.isUserLoggedIn();
-      if (this.loggedIn) {
+      this.isLoggedIn = this.userService.isUserLoggedIn();
+      if (this.isLoggedIn) {
         this.router.navigate(['dashboard']);
       }
     }

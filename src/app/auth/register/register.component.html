@@ -1,38 +1,53 @@
+<section class="section" ng-controller="authController">
+ <div class="container">
 
-<div class="flex column">
-   <div class="">
-      <div class="ant-spin-container">
-         <div class="content-container">
-            <div class="flex flex--jc-sa flex--align-center">
-               <div class="content">
-                  <form  name="myRegForm" [formGroup]="myRegForm" novalidate (ngSubmit)="onSubmit(myRegForm.value)">
-                     <h2>Register new account.</h2>
-                     <div class="input"><input type="text" formControlName="userName" placeholder="full name" value=""></div>
-                     <div class="input"><input type="text" formControlName="email" placeholder="email address" value=""></div>
-                     <div class="input"><input type="text" formControlName="phone" placeholder="phone number" value=""></div>
-                     <div class="input"><input type="password" formControlName="password" placeholder="password" value=""></div>
-                     <div class="input"><input type="password" formControlName="varifyPassword"  placeholder="verify password" value=""></div>
-                     <div class="form-footer">
-                      <button [disabled]="!myRegForm.valid || isLoggedIn " type="submit" class="button default centered ">Register Now</button>
-                      <a class="label-marker" href="/auth/login">← Back to Login Page</a></div>
-                  </form>
-               </div>
-               <div class="social">
-                  <a href="http://localhost:2233/auth/login/facebook" class="button block facebook">
-                     <i class="fa fa-facebook-official" aria-hidden="true"></i><!-- react-text: 254 --> Login with Facebook<!-- /react-text -->
-                  </a>
-                  <a href="http://localhost:2233/auth/login/google" class="button block google">
-                     <i class="fa fa-google" aria-hidden="true"></i><!-- react-text: 257 --> Login with Google<!-- /react-text -->
-                  </a>
-                  <a href="http://localhost:2233/auth/login/twitter" class="button block twitter">
-                     <i class="fa fa-twitter" aria-hidden="true"></i><!-- react-text: 260 --> Login with Twitter<!-- /react-text -->
-                  </a>
-                  <a href="http://localhost:2233/auth/login/instagram" class="button block instagram">
-                     <i class="fa fa-instagram" aria-hidden="true"></i><!-- react-text: 263 --> Login with Instagram<!-- /react-text -->
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>
+  <div class="title-subtitle-block">
+   <h2 class="title">Sign in to your account.</h2>
+  </div>
+
+  <div class="narrow-form-holder sign-form-holder">
+   <div>
+
+    <div class="social-buttons override-col-margin col-md-12" style="margin-bottom: 20px;">
+     <div class="col-md-6 override-col-margin">
+
+      <a style="width: 100%" href="oauth/facebook" class="btn btn custom-btn facebook custom-btn-secondary custom-btn-blue"><i
+							class="fa fa-facebook "></i> Facebook</a>
+     </div>
+
+     <div class="col-md-6 override-col-margin">
+      <a style="width: 100%" href="oauth/google" class="btn btn custom-btn google custom-btn-secondary custom-btn-blue"><i
+							class="fa fa-google-plus "></i> Google</a>
+     </div>
+    </div>
+    <form class="form" class="row col-md-12" role="form" novalidate name="loginform" ng-submit="login(loginform)" accept-charset="UTF-8"
+     id="login-nav">
+
+     <div class="form-group email optional user_email">
+      <label class="email optional control-label" for="user_email">Email</label>
+      <input type="email" ng-model="user.username" class="form-control" name="email" id="email" placeholder="Email address">
+
+     </div>
+     <div class="form-group password optional user_password">
+      <label class="password optional control-label" for="user_password">Password</label>
+      <input type="password" ng-model="user.password" class="form-control" name="password" id="password" placeholder="Password">
+
+     </div>
+     <div class="form-group flexbox-between">
+      <input class="btn btn custom-btn custom-btn-secondary custom-btn-blue" name="commit" type="submit" value="Sign In">
+     </div>
+     <br>
+     <div class="form-group text-center">
+      Need to create an account? <a class="underlined action" [routerLink]="['/auth/register']">Sign up</a>
+     </div>
+     <div class="form-group text-center">
+      Forgot your password? <a class="underlined action" [routerLink]="['/auth/reset']">Recover it</a>
+     </div>
+     </form>
    </div>
-</div>
+  </div>
+
+
+
+ </div>
+</section>
