@@ -21,13 +21,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#top" class="page-scroll" name="#top" ng-click="_gaTracker('send', 'event', 'Navbar', 'Click', 'Home');">Home</a></li>
                     <li class="">
-                        <a href="#stayuptodate" class="page-scroll" name="#stayuptodate" target="_self" ng-click="_gaTracker('send', 'event', 'Navbar', 'Click', 'Stay up to date');">Stay up to date</a></li>
-                    <li class="">
-                        <a href="#photo" class="page-scroll" name="#photo" target="_self" >Photos</a></li>
-                    <li class="">
                         <a [routerLink]="['/auth/login']" class="page-scroll" name="" target="_self" >login</a></li>
                     <li class="">
                         <a [routerLink]="['/auth/register']" class="page-scroll" name="#webcast" target="_self" >Register</a></li>
+                   <li><a *ngIf="name" class="page-scroll" name="#webcast" target="_self" >Profile</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div>
