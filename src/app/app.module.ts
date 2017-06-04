@@ -24,6 +24,7 @@ import { TrainingsComponent } from './gennext/trainings/trainings.component';
 import { WorkshopComponent } from './gennext/workshop/workshop.component';
 import {AuthModule}  from './auth/app.auth';
 import {GennextModule} from './gennext/gennext.module';
+import { DummyComponent } from './dummy/dummy.component';
 const appRoutes: Routes = [
   { path: '', component: MainComponent },
   { path: '**', component: PageNotFoundComponent }
@@ -54,4 +55,6 @@ const appRoutes: Routes = [
   providers: [localStorageService,HttpClientService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+ class AppModule { }
+
+ export default AppModule;

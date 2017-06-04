@@ -12,19 +12,15 @@
     get(url: string): Observable<Response> {
       return this.request(url, RequestMethod.Get);
     }
-
     post(url: string, body: any, headers?: any) : Observable<Response> {
       return this.request(url, RequestMethod.Post, body, headers);
     }
-
     put(url: string, body: any, headers?: any) : Observable<Response> {
       return this.request(url, RequestMethod.Put, body, headers);
     }
-
     delete(url: string, body: any, headers?: any) : Observable<Response> {
       return this.request(url, RequestMethod.Delete, body, headers);
     }
-
     private request(url: string, method: RequestMethod, body?: any, customHeaders: any = {}): Observable<Response> {
       const headers = Object.assign(new Headers(), customHeaders);
       this.addAuthHeaders(headers);
