@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { element } from 'protractor';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../auth/user.service';
 import { Observable } from 'rxjs/Rx';
@@ -7,7 +8,8 @@ import { localStorageService } from '../shared/localStorage.service';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.css']
+  styleUrls: ['./nav-bar.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class NavBarComponent implements OnInit {
 

@@ -1,8 +1,15 @@
-.navbar-brand{
-    color: #ffffff ;
+.navbar-brand {
+    color: #ffffff;
     font-weight: bold;
 }
- .subtitle {
+
+.subtitle {
     font-size: 28px;
     font-weight: bold;
+}
+
+.section-bg {
+    min-height: 500px;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
 }
